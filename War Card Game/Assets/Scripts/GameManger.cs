@@ -16,7 +16,7 @@ public class GameManger : MonoBehaviour
         
     }
 
-    void OnDealButtonPressed()
+    public void OnDealButtonPressed()
     {
         // Generate 2 random numbers
         // [2, 15)
@@ -26,5 +26,15 @@ public class GameManger : MonoBehaviour
         playerCard.sprite = Instantiate<Sprite>(Resources.Load<Sprite>("card" + left));
         cpuCard.sprite = Instantiate(Resources.Load<Sprite>("card" + right));
         // compare numbers and determine winner
+        if(left > right)
+        {
+            playerScore = playerScore + 1;
+        }
+        else if(right > left)
+        {
+            cpuScore = cpuScore + 1;
+        }
+
+
     }
 }
