@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public class GameManger : MonoBehaviour
 {
     public int playerScore = 0;
@@ -9,6 +10,9 @@ public class GameManger : MonoBehaviour
 
     public Image playerCard;
     public Image cpuCard;
+
+    public TextMeshProUGUI playerText;
+    public TextMeshProUGUI cpuText;
 
     // Start is called before the first frame update
     void Start()
@@ -29,12 +33,12 @@ public class GameManger : MonoBehaviour
         if(left > right)
         {
             playerScore = playerScore + 1;
+            playerText.text = "Player: " + playerScore;
         }
         else if(right > left)
         {
             cpuScore = cpuScore + 1;
+            cpuText.text = "CPU: " + cpuScore;
         }
-
-
     }
 }
